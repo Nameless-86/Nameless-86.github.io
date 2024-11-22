@@ -6,14 +6,69 @@
     <description>Recent content in Posts on My New Hugo Site</description>
     <generator>Hugo -- 0.139.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Nov 2024 14:53:04 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 22 Nov 2024 15:15:43 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
+      <title>Template</title>
+      <link>http://localhost:1313/posts/my-second-post/</link>
+      <pubDate>Fri, 22 Nov 2024 15:15:43 -0300</pubDate>
+      <guid>http://localhost:1313/posts/my-second-post/</guid>
+      <description>&lt;h1 id=&#34;título-del-post&#34;&gt;[Título del Post]&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Fecha de publicación:&lt;/strong&gt; [dd/mm/aaaa]&lt;br&gt;
+&lt;strong&gt;Autor:&lt;/strong&gt; [Tu nombre]&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;introducción&#34;&gt;Introducción&lt;/h2&gt;
+&lt;p&gt;[Comienza con una breve introducción que capte la atención del lector. Explica sobre qué trata el post o por qué decidiste escribirlo.]&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;subtítulo-1-introducción-al-tema&#34;&gt;[Subtítulo 1: Introducción al tema]&lt;/h2&gt;
+&lt;p&gt;[Desarrolla el contenido principal aquí. Incluye explicaciones, datos relevantes, o historias personales que conecten con el tema.]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Punto destacado 1&lt;/li&gt;
+&lt;li&gt;Punto destacado 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; [Agrega un consejo práctico o una frase inspiradora si aplica.]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>I dont regret</title>
       <link>http://localhost:1313/posts/my-first-post/</link>
       <pubDate>Fri, 22 Nov 2024 14:53:04 -0300</pubDate>
       <guid>http://localhost:1313/posts/my-first-post/</guid>
-      <description></description>
+      <description>&lt;p&gt;No me arrepiento del deploy
+Aunque me cueste el cluster hoy
+Codear es un milagro y deployé
+Como nunca jamás lo imaginé
+¿Quién va a sacarme de tu cloud,
+De tus logs y de tu state?
+Yo siento que la infraestructura se va
+Y que el uptime de hoy no volverá
+Después de cerrar el merge request
+El pipeline espera abierto
+La locura automatizada del DevOps
+Y entre un &amp;ldquo;deploy&amp;rdquo; y &amp;ldquo;rollback&amp;rdquo;
+Vamos remontando al cielo
+Y no puedo arrepentirme del deploy&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>QUE ES DOCKER?</title>
+      <link>http://localhost:1313/posts/whatisdocker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/whatisdocker/</guid>
+      <description>&lt;h1 id=&#34;que-es-docker&#34;&gt;Que es Docker?&lt;/h1&gt;
+&lt;h3 id=&#34;primero-caso-de-uso&#34;&gt;Primero, caso de uso&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Imagina que estas armando un proyecto con un equipo&lt;/li&gt;
+&lt;li&gt;Supongamos que este proyecto usa una version especifica de python&lt;/li&gt;
+&lt;li&gt;Cada miembro del equipo tiene que configurar todo a mano (dependencias, variables de entorno)&lt;/li&gt;
+&lt;li&gt;Esto trae una cantidad variada de problemas
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;A vos no te anda, en mi pc anda bien&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Si tenemos varios proyectos tenemos que invertir mucho tiempo en configurarlos&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;para-poder-evitar-esto&#34;&gt;Para poder evitar esto&lt;/h3&gt;
+&lt;h3 id=&#34;usamos-containers&#34;&gt;Usamos Containers&lt;/h3&gt;
+&lt;p&gt;Una definicion basica y por arriba de que es un container es &amp;ldquo;un container es una carpeta o un paquete con todo lo que tu aplicacion necesita para funcionar&amp;rdquo;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

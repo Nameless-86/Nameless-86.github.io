@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>QUE ES DOCKER? | My New Hugo Site</title>
+<meta name="keywords" content="">
+<meta name="description" content="Que es Docker?
+Primero, caso de uso
+
+Imagina que estas armando un proyecto con un equipo
+Supongamos que este proyecto usa una version especifica de python
+Cada miembro del equipo tiene que configurar todo a mano (dependencias, variables de entorno)
+Esto trae una cantidad variada de problemas
+
+&ldquo;A vos no te anda, en mi pc anda bien&rdquo;
+Si tenemos varios proyectos tenemos que invertir mucho tiempo en configurarlos
+
+
+
+Para poder evitar esto
+Usamos Containers
+Una definicion basica y por arriba de que es un container es &ldquo;un container es una carpeta o un paquete con todo lo que tu aplicacion necesita para funcionar&rdquo;">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/whatisdocker/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/whatisdocker/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      QUE ES DOCKER?
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="que-es-docker">Que es Docker?<a hidden class="anchor" aria-hidden="true" href="#que-es-docker">#</a></h1>
+<h3 id="primero-caso-de-uso">Primero, caso de uso<a hidden class="anchor" aria-hidden="true" href="#primero-caso-de-uso">#</a></h3>
+<ul>
+<li>Imagina que estas armando un proyecto con un equipo</li>
+<li>Supongamos que este proyecto usa una version especifica de python</li>
+<li>Cada miembro del equipo tiene que configurar todo a mano (dependencias, variables de entorno)</li>
+<li>Esto trae una cantidad variada de problemas
+<ul>
+<li>&ldquo;A vos no te anda, en mi pc anda bien&rdquo;</li>
+<li>Si tenemos varios proyectos tenemos que invertir mucho tiempo en configurarlos</li>
+</ul>
+</li>
+</ul>
+<h3 id="para-poder-evitar-esto">Para poder evitar esto<a hidden class="anchor" aria-hidden="true" href="#para-poder-evitar-esto">#</a></h3>
+<h3 id="usamos-containers">Usamos Containers<a hidden class="anchor" aria-hidden="true" href="#usamos-containers">#</a></h3>
+<p>Una definicion basica y por arriba de que es un container es &ldquo;un container es una carpeta o un paquete con todo lo que tu aplicacion necesita para funcionar&rdquo;</p>
+<p>Gracias a un container no nos tenemos que preocupar por la configuracion del proyecto, ya que todo lo que necesita esta dentro del container</p>
+<p>Lo unico que necesitariamos es algo para manipular y administrar estos containers, que es donde aparece</p>
+<h2 id="docker">Docker<a hidden class="anchor" aria-hidden="true" href="#docker">#</a></h2>
+<p>Docker es/tiene/puede:</p>
+<ul>
+<li>Tiene una gran comunidad por lo que se cuenta con herramientas y librerias disponibles (dockerhub)
+<ul>
+<li>Una herramienta para administrar containers</li>
+<li>Una de las herramientas fundamentales en el area de DevOps</li>
+<li>Facilita los procesos de CI/CD al proveer entornos para cada stage/etapa?</li>
+<li>los containers usan menos recursos que una maquina virtual (despues se amplia)</li>
+<li>Las aplicaciones corren igual sin importar en que maquina esten (OS agnostic)</li>
+<li>Usa menos espacio ya que usa un file system basado en layers (se amplia despues)</li>
+<li>&hellip;</li>
+</ul>
+</li>
+</ul>
+<h1 id="como-se-instala-docker">Como se instala Docker?<a hidden class="anchor" aria-hidden="true" href="#como-se-instala-docker">#</a></h1>
+<p>En la pagina oficial de docker esta como instalar docker engine en distintas distribuciones de linux
+<a href="https://docs.docker.com/engine/install/%5BDISTRO%5D/">https://docs.docker.com/engine/install/[DISTRO]/</a></p>
+<p>En el caso de windows se puede instalar directamente docker desktop (docker engine con una UI)</p>
+<p>una vez que terminamos de instalar, para verificar que ande todo bien corre este comando $ docker run hello-world</p>
+<h1 id="ya-muestra-el-maldito-container">Ya muestra el maldito container<a hidden class="anchor" aria-hidden="true" href="#ya-muestra-el-maldito-container">#</a></h1>
+<p>Antes de llegar al container vamos con el dockerfile hace la imagen de la imagen sale el container
+Dockerfile &mdash;&mdash;&gt; Imagen &mdash;&mdash;&ndash;&gt; Container</p>
+<p>El dockerfile es un archivo de texto (yaml) que tiene las instrucciones de como se va a hacer la imagen, es como armar un molde</p>
+<p>que le hago al dockerfile para que haga la imagen?
+corre este comando $ docker build -t nombre-de-la-imagen ./directorio-del-dockerfile</p>
+<p>la imagen seria el molde, de la imagen sale un container (puede salir mas de uno)</p>
+<p>$ docker run nombre-imagen</p>
+<h1 id="anatomia-de-un-dockerfile">Anatomia de un Dockerfile<a hidden class="anchor" aria-hidden="true" href="#anatomia-de-un-dockerfile">#</a></h1>
+<p>basicamente un dockerfile describe los pasos necesarios para crear una imagen, por lo general va en el directorio root de la app.</p>
+<p>cada linea del dockerfile crea una nueva layer de una imagen que docker la va a guardar, basicamente cuando hagas imagenes nuevas docker solo necesita crear layers de imagenes que varien de la anterior</p>
+<p>FROM node:0.10 &mdash;&gt; imagen base</p>
+<p>MAINTAINER Anna Doe <a href="mailto:anna@example.com">anna@example.com</a> &ndash;&gt; metadata
+LABEL &ldquo;rating&rdquo;=&ldquo;Five Stars&rdquo; &ldquo;class&rdquo;=&ldquo;First Class&rdquo; &ndash;&gt; metadata
+USER root (por mas que los containers provean aislamiento del os siguen corriendo en el kernel del host, en los containers de produccion siempre se debe correr como un usuario no privilegiado)</p>
+<p>&ndash; Setear variables de entorno para simplificar el proceso de crear la imagen, manteniendo el dockefile mas simple y siguiendo el principio DRY(dont repeat yourself)</p>
+<p>ENV AP /data/app
+ENV SCPATH /etc/supervisor/conf.d</p>
+<p>RUN apt-get -y update &ndash;&gt; esto va a hacer que el build sea mas lento, si podes conseguir una imagen que este actualizada</p>
+<h4 id="the-daemons-esto-instala-algunas-dependencias-que-necesito-usar-tambien-forma-la-estructura-archivos-que-necesito">The daemons (esto instala algunas dependencias que necesito usar, tambien forma la estructura archivos que necesito)<a hidden class="anchor" aria-hidden="true" href="#the-daemons-esto-instala-algunas-dependencias-que-necesito-usar-tambien-forma-la-estructura-archivos-que-necesito">#</a></h4>
+<p>RUN apt-get -y install supervisor
+RUN mkdir -p /var/log/supervisor</p>
+<h4 id="supervisor-configuration">Supervisor Configuration<a hidden class="anchor" aria-hidden="true" href="#supervisor-configuration">#</a></h4>
+<p>&ndash; Add sirve para copiar archivos del filesystem local a tu imagen (una vez que haga la imagen puedo usarla sin tener accesso al file system original, ya que los archivos fueron copiados)
+ADD ./supervisord/conf.d/* $SCPATH/</p>
+<h4 id="application-code">Application Code<a hidden class="anchor" aria-hidden="true" href="#application-code">#</a></h4>
+<p>El orden de los comandos va a afectar el tiempo de ejecucion, lo optimo es poner los que cambian entre cada imagen al fondo</p>
+<p>ADD <em>.js</em> $AP/
+WORKDIR $AP
+RUN npm install</p>
+<p>CMD corre el comando que inicia el proceso que quiero correr dentro del container</p>
+<p>CMD [&ldquo;supervisord&rdquo;, &ldquo;-n&rdquo;]</p>
+<p>Lo que se considera como best practice es correr un solo proceso en un container</p>
+<h2 id="containers-vs-virtual-machines">CONTAINERS VS VIRTUAL MACHINES<a hidden class="anchor" aria-hidden="true" href="#containers-vs-virtual-machines">#</a></h2>
+<p>Si muy lindo el container, pero puedo hacer una maquina virtual y es lo mismo</p>
+<p>Por que los containers y las maquinas virtuales no son lo mismo?
+Porque si fueran lo mismo se llamarian igual, chau.</p>
+<p>Bueno, un viaje por distintas epocas de desarrollo de software
+<img alt="K8s Virtualization" loading="lazy" src="https://kubernetes.io/images/docs/Container_Evolution.svg"></p>
+<p>En la etapa tradicional se usaban servidores fisicos, no podemos definir recursos para distintas partes del servidor, en el caso de correr 2 aplicaciones en el mismo servidor, si una toma muchos recursos hacia caer la otra, la solucion es usar varios servidores, pero el problema de esto es el alto precio de escalar servidores fisicos y que hago con los recursos no utilizados.</p>
+<p>Deploys virtualizados: Otra solucion fue correr maquinas virtuales en un servidor, la virtualizacion permite aislar y asegurar los procesos ya que cada una corre su propio sistema operativo, por lo que el resto no pueden acceder.
+Virtualizando optimizamos el uso de recursos en el servidor fisico, esto escala mejor ya que puedo usar un grupo de servidores fisicos con maquinas virtuales desechables</p>
+<p>Containers: a diferencia de las maquinas virtuales comparten sistema operativo entre las aplicaciones, tienen su propio filesystem, cpu y memoria. Lo que los hace muy utiles es el ser portables a lo largo de sistemas operativos y distintos cloud providers</p>
+<h2 id="como-se-aislan-los-procesos-en-containers">Como se aislan los procesos en containers?<a hidden class="anchor" aria-hidden="true" href="#como-se-aislan-los-procesos-en-containers">#</a></h2>
+<pre><code>Namespaces: Docker creates separate namespaces for the container, isolating its process IDs, network interfaces, mounts, IPC resources, hostname, and user/group IDs. This gives the container its own isolated environment.
+</code></pre>
+<p>Kernel Namespaces, esto es una feature de linux
+Docker usa:</p>
+<ul>
+<li>
+<p>PID (process ID): cada container tiene su propio set de process ids, dentro del container los procesos tienen distinto PID que en el host, esto previene al container de interactuar con procesos fuera de el</p>
+</li>
+<li>
+<p>Network: Aisla las interfaces de red, ips, routing tables. Cada container tiene su propio network stack, por lo que tiene su propia ip y configuracion de red, distinta del host.</p>
+</li>
+<li>
+<p>Mount: Esto es una forma de montar y desmontar filesystems sin afectar al host</p>
+</li>
+<li>
+<p>UTS: para aislar el hostname y domain name, util para las configuraciones de red</p>
+</li>
+<li>
+<p>User: Esto permite el mapeo de usuarios y group IDS dentro del container, esto provee seguridad al no darles acceso directo a los privilegios de root del host (mucho muy importante)</p>
+</li>
+</ul>
+<p>En docker: se crean namespaces separados para el container, lo que crea su propio entorno aislado</p>
+<h2 id="que-se-encarga-de-los-recursos-que-usa-cada-container">Que se encarga de los recursos que usa cada container?<a hidden class="anchor" aria-hidden="true" href="#que-se-encarga-de-los-recursos-que-usa-cada-container">#</a></h2>
+<p>Control groupc (cgroups), tambien son una feature del kernel de linux, lo que aisla los recursos dentro de cada container (cpu, memoria y operaciones sobre el disco)
+En el caso de docker, pone los procesos del container en cgroups, que controlan y limitan los procesos del container, esto asegura la buena performance.</p>
+<h1 id="en-caso-de-que-quieras-ver-con-mas-profundidad-estos-ultimos-temas">En caso de que quieras ver con mas profundidad estos ultimos temas<a hidden class="anchor" aria-hidden="true" href="#en-caso-de-que-quieras-ver-con-mas-profundidad-estos-ultimos-temas">#</a></h1>
+<p><a href="https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504">https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504</a>
+<a href="https://medium.com/@saschagrunert">https://medium.com/@saschagrunert</a> demystifying-containers-part-ii-container-runtimes-e363aa378f25
+<a href="https://medium.com/@saschagrunert/demystifying-containers-part-iii-container-images-244865de6fef">https://medium.com/@saschagrunert/demystifying-containers-part-iii-container-images-244865de6fef</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="http://localhost:1313/">My New Hugo Site</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
