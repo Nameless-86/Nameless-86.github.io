@@ -1,0 +1,4 @@
+[submodule "public"]
+	path = public
+	url = https://github.com/Nameless-86/Nameless-86.github.io
+	branch = main
