@@ -1,4 +1,21 @@
-baseURL = 'https://github.com/Nameless-86/Nameless-86.github.io'
+baseURL = '/'
 languageCode = 'en-us'
 title = 'Namelesss blog'
 theme = 'PaperMod'
+
+[params.homeInfoParams]
+Title = "Whoami"
+Content = """
+I'm Nicola Petetta, a developer from Argentina. With experience in Artificial Intelligence, Web Development and Cloud Engineering.
+
+I will write about anything that comes to my mind in this blog, trying to keep the shitposting to the minimum.
+"""
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/Nameless-86"
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/nicola-petetta/"
+
