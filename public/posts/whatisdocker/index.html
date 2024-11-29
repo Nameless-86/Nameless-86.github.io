@@ -5,10 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>QUE ES DOCKER? | Namelesss blog</title>
+<title>No me la container - Introduccion a Docker | Namelesss blog</title>
 <meta name="keywords" content="">
 <meta name="description" content="Que es Docker?
-Primero, caso de uso
+Introduccion
 
 Imagina que estas armando un proyecto con un equipo
 Supongamos que este proyecto usa una version especifica de python
@@ -122,14 +122,14 @@ Una definicion basica y por arriba de que es un container es &ldquo;un container
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      QUE ES DOCKER?
+      No me la container - Introduccion a Docker
     </h1>
     <div class="post-meta">
 
 </div>
   </header> 
   <div class="post-content"><h1 id="que-es-docker">Que es Docker?<a hidden class="anchor" aria-hidden="true" href="#que-es-docker">#</a></h1>
-<h3 id="primero-caso-de-uso">Primero, caso de uso<a hidden class="anchor" aria-hidden="true" href="#primero-caso-de-uso">#</a></h3>
+<h3 id="introduccion">Introduccion<a hidden class="anchor" aria-hidden="true" href="#introduccion">#</a></h3>
 <ul>
 <li>Imagina que estas armando un proyecto con un equipo</li>
 <li>Supongamos que este proyecto usa una version especifica de python</li>
@@ -162,25 +162,25 @@ Una definicion basica y por arriba de que es un container es &ldquo;un container
 </li>
 </ul>
 <h1 id="como-se-instala-docker">Como se instala Docker?<a hidden class="anchor" aria-hidden="true" href="#como-se-instala-docker">#</a></h1>
-<p>En la pagina oficial de docker esta como instalar docker engine en distintas distribuciones de linux
-<a href="https://docs.docker.com/engine/install/%5BDISTRO%5D/">https://docs.docker.com/engine/install/[DISTRO]/</a></p>
+<p>En la pagina oficial de docker esta como instalar docker engine en distintas distribuciones de linux</p>
+<p><a href="https://docs.docker.com/engine/install/%5BDISTRO%5D/">https://docs.docker.com/engine/install/[DISTRO]/</a></p>
 <p>En el caso de windows se puede instalar directamente docker desktop (docker engine con una UI)</p>
 <p>una vez que terminamos de instalar, para verificar que ande todo bien corre este comando $ docker run hello-world</p>
 <h1 id="ya-muestra-el-maldito-container">Ya muestra el maldito container<a hidden class="anchor" aria-hidden="true" href="#ya-muestra-el-maldito-container">#</a></h1>
-<p>Antes de llegar al container vamos con el dockerfile hace la imagen de la imagen sale el container
-Dockerfile &mdash;&mdash;&gt; Imagen &mdash;&mdash;&ndash;&gt; Container</p>
+<p>Antes de llegar al container vamos con el dockerfile hace la imagen de la imagen sale el container</p>
+<p>Dockerfile &mdash;&mdash;&gt; Imagen &mdash;&mdash;&ndash;&gt; Container</p>
 <p>El dockerfile es un archivo de texto (yaml) que tiene las instrucciones de como se va a hacer la imagen, es como armar un molde</p>
 <p>que le hago al dockerfile para que haga la imagen?
 corre este comando $ docker build -t nombre-de-la-imagen ./directorio-del-dockerfile</p>
 <p>la imagen seria el molde, de la imagen sale un container (puede salir mas de uno)</p>
-<p>$ docker run nombre-imagen</p>
-<h1 id="anatomia-de-un-dockerfile">Anatomia de un Dockerfile<a hidden class="anchor" aria-hidden="true" href="#anatomia-de-un-dockerfile">#</a></h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker run nombre-imagen
+</span></span></code></pre></div><h1 id="anatomia-de-un-dockerfile">Anatomia de un Dockerfile<a hidden class="anchor" aria-hidden="true" href="#anatomia-de-un-dockerfile">#</a></h1>
 <p>basicamente un dockerfile describe los pasos necesarios para crear una imagen, por lo general va en el directorio root de la app.</p>
 <p>cada linea del dockerfile crea una nueva layer de una imagen que docker la va a guardar, basicamente cuando hagas imagenes nuevas docker solo necesita crear layers de imagenes que varien de la anterior</p>
 <p>FROM node:0.10 &mdash;&gt; imagen base</p>
-<p>MAINTAINER Anna Doe <a href="mailto:anna@example.com">anna@example.com</a> &ndash;&gt; metadata
-LABEL &ldquo;rating&rdquo;=&ldquo;Five Stars&rdquo; &ldquo;class&rdquo;=&ldquo;First Class&rdquo; &ndash;&gt; metadata
-USER root (por mas que los containers provean aislamiento del os siguen corriendo en el kernel del host, en los containers de produccion siempre se debe correr como un usuario no privilegiado)</p>
+<p>MAINTAINER Anna Doe <a href="mailto:anna@example.com">anna@example.com</a> &ndash;&gt; metadata</p>
+<p>LABEL &ldquo;rating&rdquo;=&ldquo;Five Stars&rdquo; &ldquo;class&rdquo;=&ldquo;First Class&rdquo; &ndash;&gt; metadata</p>
+<p>USER root (por mas que los containers provean aislamiento del os siguen corriendo en el kernel del host, en los containers de produccion siempre se debe correr como un usuario no privilegiado)</p>
 <p>&ndash; Setear variables de entorno para simplificar el proceso de crear la imagen, manteniendo el dockefile mas simple y siguiendo el principio DRY(dont repeat yourself)</p>
 <p>ENV AP /data/app
 ENV SCPATH /etc/supervisor/conf.d</p>
@@ -210,8 +210,6 @@ Porque si fueran lo mismo se llamarian igual, chau.</p>
 Virtualizando optimizamos el uso de recursos en el servidor fisico, esto escala mejor ya que puedo usar un grupo de servidores fisicos con maquinas virtuales desechables</p>
 <p>Containers: a diferencia de las maquinas virtuales comparten sistema operativo entre las aplicaciones, tienen su propio filesystem, cpu y memoria. Lo que los hace muy utiles es el ser portables a lo largo de sistemas operativos y distintos cloud providers</p>
 <h2 id="como-se-aislan-los-procesos-en-containers">Como se aislan los procesos en containers?<a hidden class="anchor" aria-hidden="true" href="#como-se-aislan-los-procesos-en-containers">#</a></h2>
-<pre><code>Namespaces: Docker creates separate namespaces for the container, isolating its process IDs, network interfaces, mounts, IPC resources, hostname, and user/group IDs. This gives the container its own isolated environment.
-</code></pre>
 <p>Kernel Namespaces, esto es una feature de linux
 Docker usa:</p>
 <ul>
@@ -233,12 +231,12 @@ Docker usa:</p>
 </ul>
 <p>En docker: se crean namespaces separados para el container, lo que crea su propio entorno aislado</p>
 <h2 id="que-se-encarga-de-los-recursos-que-usa-cada-container">Que se encarga de los recursos que usa cada container?<a hidden class="anchor" aria-hidden="true" href="#que-se-encarga-de-los-recursos-que-usa-cada-container">#</a></h2>
-<p>Control groupc (cgroups), tambien son una feature del kernel de linux, lo que aisla los recursos dentro de cada container (cpu, memoria y operaciones sobre el disco)
-En el caso de docker, pone los procesos del container en cgroups, que controlan y limitan los procesos del container, esto asegura la buena performance.</p>
+<p>Control groupc (cgroups), tambien son una feature del kernel de linux, lo que aisla los recursos dentro de cada container (cpu, memoria y operaciones sobre el disco)</p>
+<p>En el caso de docker, pone los procesos del container en cgroups, que controlan y limitan los procesos del container, esto asegura la buena performance.</p>
 <h1 id="en-caso-de-que-quieras-ver-con-mas-profundidad-estos-ultimos-temas">En caso de que quieras ver con mas profundidad estos ultimos temas<a hidden class="anchor" aria-hidden="true" href="#en-caso-de-que-quieras-ver-con-mas-profundidad-estos-ultimos-temas">#</a></h1>
-<p><a href="https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504">https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504</a>
-<a href="https://medium.com/@saschagrunert">https://medium.com/@saschagrunert</a> demystifying-containers-part-ii-container-runtimes-e363aa378f25
-<a href="https://medium.com/@saschagrunert/demystifying-containers-part-iii-container-images-244865de6fef">https://medium.com/@saschagrunert/demystifying-containers-part-iii-container-images-244865de6fef</a></p>
+<p><a href="https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504">https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504</a></p>
+<p><a href="https://medium.com/@saschagrunert">https://medium.com/@saschagrunert</a> demystifying-containers-part-ii-container-runtimes-e363aa378f25</p>
+<p><a href="https://medium.com/@saschagrunert/demystifying-containers-part-iii-container-images-244865de6fef">https://medium.com/@saschagrunert/demystifying-containers-part-iii-container-images-244865de6fef</a></p>
 
 
   </div>

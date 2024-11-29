@@ -1,10 +1,10 @@
 +++
-title = 'QUE ES DOCKER?'
+title = 'No me la container - Introduccion a Docker'
 +++
 
 # Que es Docker?
 
-### Primero, caso de uso
+### Introduccion
 
 - Imagina que estas armando un proyecto con un equipo
 - Supongamos que este proyecto usa una version especifica de python
@@ -38,6 +38,7 @@ Docker es/tiene/puede:
 
 # Como se instala Docker?
 En la pagina oficial de docker esta como instalar docker engine en distintas distribuciones de linux
+
 https://docs.docker.com/engine/install/[DISTRO]/
 
 En el caso de windows se puede instalar directamente docker desktop (docker engine con una UI)
@@ -47,6 +48,7 @@ una vez que terminamos de instalar, para verificar que ande todo bien corre este
 # Ya muestra el maldito container
 
 Antes de llegar al container vamos con el dockerfile hace la imagen de la imagen sale el container
+
 Dockerfile ------> Imagen --------> Container
 
 El dockerfile es un archivo de texto (yaml) que tiene las instrucciones de como se va a hacer la imagen, es como armar un molde
@@ -55,9 +57,9 @@ que le hago al dockerfile para que haga la imagen?
 corre este comando $ docker build -t nombre-de-la-imagen ./directorio-del-dockerfile
 
 la imagen seria el molde, de la imagen sale un container (puede salir mas de uno)
-
+```bash
 $ docker run nombre-imagen
-
+```
 
 # Anatomia de un Dockerfile
 basicamente un dockerfile describe los pasos necesarios para crear una imagen, por lo general va en el directorio root de la app.
@@ -68,7 +70,9 @@ cada linea del dockerfile crea una nueva layer de una imagen que docker la va a 
 FROM node:0.10 ---> imagen base
 
 MAINTAINER Anna Doe <anna@example.com> --> metadata
+
 LABEL "rating"="Five Stars" "class"="First Class" --> metadata
+
 USER root (por mas que los containers provean aislamiento del os siguen corriendo en el kernel del host, en los containers de produccion siempre se debe correr como un usuario no privilegiado)
 
 -- Setear variables de entorno para simplificar el proceso de crear la imagen, manteniendo el dockefile mas simple y siguiendo el principio DRY(dont repeat yourself)
@@ -122,10 +126,6 @@ Containers: a diferencia de las maquinas virtuales comparten sistema operativo e
 
 ## Como se aislan los procesos en containers?
 
-    Namespaces: Docker creates separate namespaces for the container, isolating its process IDs, network interfaces, mounts, IPC resources, hostname, and user/group IDs. This gives the container its own isolated environment.
-
-
-
 Kernel Namespaces, esto es una feature de linux
 Docker usa:
  - PID (process ID): cada container tiene su propio set de process ids, dentro del container los procesos tienen distinto PID que en el host, esto previene al container de interactuar con procesos fuera de el
@@ -142,11 +142,16 @@ En docker: se crean namespaces separados para el container, lo que crea su propi
 ## Que se encarga de los recursos que usa cada container?
 
 Control groupc (cgroups), tambien son una feature del kernel de linux, lo que aisla los recursos dentro de cada container (cpu, memoria y operaciones sobre el disco)
+
 En el caso de docker, pone los procesos del container en cgroups, que controlan y limitan los procesos del container, esto asegura la buena performance.
 
 
 
 # En caso de que quieras ver con mas profundidad estos ultimos temas
 https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504
+
+
 https://medium.com/@saschagrunert demystifying-containers-part-ii-container-runtimes-e363aa378f25
+
+
 https://medium.com/@saschagrunert/demystifying-containers-part-iii-container-images-244865de6fef

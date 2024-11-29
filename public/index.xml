@@ -49,12 +49,12 @@ Vamos remontando al cielo
 Y no puedo arrepentirme del deploy&lt;/p&gt;</description>
     </item>
     <item>
-      <title>QUE ES DOCKER?</title>
+      <title>No me la container - Introduccion a Docker</title>
       <link>//localhost:1313/posts/whatisdocker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/posts/whatisdocker/</guid>
       <description>&lt;h1 id=&#34;que-es-docker&#34;&gt;Que es Docker?&lt;/h1&gt;
-&lt;h3 id=&#34;primero-caso-de-uso&#34;&gt;Primero, caso de uso&lt;/h3&gt;
+&lt;h3 id=&#34;introduccion&#34;&gt;Introduccion&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Imagina que estas armando un proyecto con un equipo&lt;/li&gt;
 &lt;li&gt;Supongamos que este proyecto usa una version especifica de python&lt;/li&gt;
