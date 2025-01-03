@@ -1,6 +1,6 @@
 +++
 date = '2024-11-22T14:53:04-03:00'
-title = 'I dont regret'
+title = 'BadSong'
 +++
 
 No me arrepiento del deploy

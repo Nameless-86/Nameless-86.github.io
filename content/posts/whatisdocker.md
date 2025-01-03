@@ -1,5 +1,6 @@
 +++
-title = 'No me la container - Introduccion a Docker'
+title = 'Introduccion a Docker'
+date = '2024-12-10T14:53:04-03:00'
 +++
 
 # Que es Docker?

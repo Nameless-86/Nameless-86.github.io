@@ -3,12 +3,24 @@ languageCode = 'en-us'
 title = 'Namelesss blog'
 theme = 'PaperMod'
 
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 10
+
+[[menu.main]]
+identifier = "certifications"
+name = "Certifications"
+url = "/posts/certs/"
+weight = 20
+
 [params.homeInfoParams]
 Title = "Whoami"
 Content = """
-I'm Nicola Petetta, a developer from Argentina. With experience in Artificial Intelligence, Web Development and Cloud Engineering.
+I'm Nico, a developer from Argentina. With experience in Artificial Intelligence, Web Development and Cloud Engineering.
 
-I will write about anything that comes to my mind in this blog, trying to keep the shitposting to the minimum.
+I will write about anything that comes to my mind in this entries in English, Spanish or I can surprise you with another language.
 """
 
 [[params.socialIcons]]
@@ -18,4 +30,11 @@ url = "https://github.com/Nameless-86"
 [[params.socialIcons]]
 name = "linkedin"
 url = "https://www.linkedin.com/in/nicola-petetta/"
+
+[[params.socialIcons]]
+name = "email"
+url = "nicola.petetta@gmail.com"
+
+
+
 

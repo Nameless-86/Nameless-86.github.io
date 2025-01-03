@@ -6,33 +6,53 @@
     <description>Recent content in Posts on Namelesss blog</description>
     <generator>Hugo -- 0.139.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Nov 2024 15:15:43 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 13 Dec 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Template</title>
-      <link>//localhost:1313/posts/my-second-post/</link>
-      <pubDate>Fri, 22 Nov 2024 15:15:43 -0300</pubDate>
-      <guid>//localhost:1313/posts/my-second-post/</guid>
-      <description>&lt;h1 id=&#34;título-del-post&#34;&gt;[Título del Post]&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;Fecha de publicación:&lt;/strong&gt; [dd/mm/aaaa]&lt;br&gt;
-&lt;strong&gt;Autor:&lt;/strong&gt; [Tu nombre]&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;introducción&#34;&gt;Introducción&lt;/h2&gt;
-&lt;p&gt;[Comienza con una breve introducción que capte la atención del lector. Explica sobre qué trata el post o por qué decidiste escribirlo.]&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;subtítulo-1-introducción-al-tema&#34;&gt;[Subtítulo 1: Introducción al tema]&lt;/h2&gt;
-&lt;p&gt;[Desarrolla el contenido principal aquí. Incluye explicaciones, datos relevantes, o historias personales que conecten con el tema.]&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Punto destacado 1&lt;/li&gt;
-&lt;li&gt;Punto destacado 2&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; [Agrega un consejo práctico o una frase inspiradora si aplica.]&lt;/p&gt;</description>
+      <title>Little Web Server</title>
+      <link>//localhost:1313/posts/notthesame/</link>
+      <pubDate>Fri, 13 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/notthesame/</guid>
+      <description>&lt;h2 id=&#34;in-my-journey-of-learning-go-i-did-a-small-web-server-using-only-the-standard-library&#34;&gt;In my journey of learning Go, I did a small web server using only the standard library.&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;encoding/json&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;net/http&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;strconv&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;sync&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;for-the-enpoints-i-used-servemux-whats-servemux&#34;&gt;For the enpoints I used ServeMux, whats ServeMux?&lt;/h3&gt;
+&lt;p&gt;ServeMux is an HTTP request multiplexer.
+It matches the URL of each incoming request against a list of registered patterns and calls the handler for the pattern that most closely matches the URL.
+In simpler terms it handles the logic for every endpoint, following this pattern [[METHOD ][HOST]/[PATH]]&lt;/p&gt;</description>
     </item>
     <item>
-      <title>I dont regret</title>
-      <link>//localhost:1313/posts/my-first-post/</link>
+      <title>Introduccion a Docker</title>
+      <link>//localhost:1313/posts/whatisdocker/</link>
+      <pubDate>Tue, 10 Dec 2024 14:53:04 -0300</pubDate>
+      <guid>//localhost:1313/posts/whatisdocker/</guid>
+      <description>&lt;h1 id=&#34;que-es-docker&#34;&gt;Que es Docker?&lt;/h1&gt;
+&lt;h3 id=&#34;introduccion&#34;&gt;Introduccion&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Imagina que estas armando un proyecto con un equipo&lt;/li&gt;
+&lt;li&gt;Supongamos que este proyecto usa una version especifica de python&lt;/li&gt;
+&lt;li&gt;Cada miembro del equipo tiene que configurar todo a mano (dependencias, variables de entorno)&lt;/li&gt;
+&lt;li&gt;Esto trae una cantidad variada de problemas
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;A vos no te anda, en mi pc anda bien&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Si tenemos varios proyectos tenemos que invertir mucho tiempo en configurarlos&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;para-poder-evitar-esto&#34;&gt;Para poder evitar esto&lt;/h3&gt;
+&lt;h3 id=&#34;usamos-containers&#34;&gt;Usamos Containers&lt;/h3&gt;
+&lt;p&gt;Una definicion basica y por arriba de que es un container es &amp;ldquo;un container es una carpeta o un paquete con todo lo que tu aplicacion necesita para funcionar&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>BadSong</title>
+      <link>//localhost:1313/posts/badsong/</link>
       <pubDate>Fri, 22 Nov 2024 14:53:04 -0300</pubDate>
-      <guid>//localhost:1313/posts/my-first-post/</guid>
+      <guid>//localhost:1313/posts/badsong/</guid>
       <description>&lt;p&gt;No me arrepiento del deploy
 Aunque me cueste el cluster hoy
 Codear es un milagro y deployé
@@ -49,26 +69,23 @@ Vamos remontando al cielo
 Y no puedo arrepentirme del deploy&lt;/p&gt;</description>
     </item>
     <item>
-      <title>QUE ES DOCKER?</title>
-      <link>//localhost:1313/posts/whatisdocker/</link>
+      <title>Certifications</title>
+      <link>//localhost:1313/posts/certs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/whatisdocker/</guid>
-      <description>&lt;h1 id=&#34;que-es-docker&#34;&gt;Que es Docker?&lt;/h1&gt;
-&lt;h3 id=&#34;primero-caso-de-uso&#34;&gt;Primero, caso de uso&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Imagina que estas armando un proyecto con un equipo&lt;/li&gt;
-&lt;li&gt;Supongamos que este proyecto usa una version especifica de python&lt;/li&gt;
-&lt;li&gt;Cada miembro del equipo tiene que configurar todo a mano (dependencias, variables de entorno)&lt;/li&gt;
-&lt;li&gt;Esto trae una cantidad variada de problemas
-&lt;ul&gt;
-&lt;li&gt;&amp;ldquo;A vos no te anda, en mi pc anda bien&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;Si tenemos varios proyectos tenemos que invertir mucho tiempo en configurarlos&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;para-poder-evitar-esto&#34;&gt;Para poder evitar esto&lt;/h3&gt;
-&lt;h3 id=&#34;usamos-containers&#34;&gt;Usamos Containers&lt;/h3&gt;
-&lt;p&gt;Una definicion basica y por arriba de que es un container es &amp;ldquo;un container es una carpeta o un paquete con todo lo que tu aplicacion necesita para funcionar&amp;rdquo;&lt;/p&gt;</description>
+      <guid>//localhost:1313/posts/certs/</guid>
+      <description>&lt;h3 id=&#34;here-you-can-check-my-certifications&#34;&gt;Here you can check my certifications&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.credly.com/badges/7552d5b7-3b41-4397-b7b6-67b8dfed64c5/linked_in?t=sn64zw&#34;&gt;AWS Certified Solutions Architect – Associate&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.udemy.com/certificate/UC-94af6a6e-c613-4fb3-a00d-b7c61a1f6e0f/&#34;&gt;Machine Learning A to Z&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.udemy.com/certificate/UC-5e57288d-f874-4150-ac75-3daaa97dc057/&#34;&gt;Golang Course &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.udemy.com/certificate/UC-567f8b39-ccb9-4b0a-a582-1a82ed8c8bf4/&#34;&gt;Python Course&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.udemy.com/certificate/UC-782a0e6e-8514-496a-8d21-a11877bcf59a/&#34;&gt;Introduction To C++&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.udemy.com/certificate/UC-3f7e95ce-48a7-4918-826f-e02cf1fa0823/&#34;&gt;Backend Engineering using JavaScript (node,express,mongodb)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://verify.skilljar.com/c/45z9trhyvpxt&#34;&gt;Networking &amp;amp; Security 101&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://cert.efset.org/SY9PAG&#34;&gt;English Test&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.genome.gov/&#34;&gt;Pytorch Course&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.genome.gov/&#34;&gt;AWS Networking Specialty&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.genome.gov/&#34;&gt;Github Advanced Security&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.genome.gov/&#34;&gt;Github Actions&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

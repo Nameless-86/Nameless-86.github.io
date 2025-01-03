@@ -100,6 +100,16 @@
             </div>
         </div>
         <ul id="menu">
+            <li>
+                <a href="//localhost:1313/" title="Home">
+                    <span class="active">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/posts/certs/" title="Certifications">
+                    <span>Certifications</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -109,8 +119,8 @@
         <h1>Whoami</h1>
     </header>
     <div class="entry-content">
-        <p>I&rsquo;m Nicola Petetta, a developer from Argentina. With experience in Artificial Intelligence, Web Development and Cloud Engineering.</p>
-<p>I will write about anything that comes to my mind in this blog, trying to keep the shitposting to the minimum.</p>
+        <p>I&rsquo;m Nico, a developer from Argentina. With experience in Artificial Intelligence, Web Development and Cloud Engineering.</p>
+<p>I will write about anything that comes to my mind in this entries in English, Spanish or I can surprise you with another language.</p>
 
     </div>
     <footer class="entry-footer">
@@ -133,6 +143,14 @@
     <circle cx="4" cy="4" r="2"></circle>
 </svg>
     </a>
+    <a href="nicola.petetta@gmail.com" target="_blank" rel="noopener noreferrer me"
+        title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+    </a>
 </div>
 
     </footer>
@@ -140,24 +158,33 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Template
+    <h2 class="entry-hint-parent">Little Web Server
     </h2>
   </header>
   <div class="entry-content">
-    <p>[Título del Post] Fecha de publicación: [dd/mm/aaaa]
-Autor: [Tu nombre]
-Introducción [Comienza con una breve introducción que capte la atención del lector. Explica sobre qué trata el post o por qué decidiste escribirlo.]
-[Subtítulo 1: Introducción al tema] [Desarrolla el contenido principal aquí. Incluye explicaciones, datos relevantes, o historias personales que conecten con el tema.]
-Punto destacado 1 Punto destacado 2 Tip: [Agrega un consejo práctico o una frase inspiradora si aplica.]
+    <p>In my journey of learning Go, I did a small web server using only the standard library. import ( &#34;encoding/json&#34; &#34;fmt&#34; &#34;net/http&#34; &#34;strconv&#34; &#34;sync&#34; ) For the enpoints I used ServeMux, whats ServeMux? ServeMux is an HTTP request multiplexer. It matches the URL of each incoming request against a list of registered patterns and calls the handler for the pattern that most closely matches the URL. In simpler terms it handles the logic for every endpoint, following this pattern [[METHOD ][HOST]/[PATH]]
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2024-11-22 15:15:43 -0300 -03'>November 22, 2024</span></footer>
-  <a class="entry-link" aria-label="post link to Template" href="//localhost:1313/posts/my-second-post/"></a>
+  <footer class="entry-footer"><span title='2024-12-13 00:00:00 +0000 UTC'>December 13, 2024</span></footer>
+  <a class="entry-link" aria-label="post link to Little Web Server" href="//localhost:1313/posts/notthesame/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">I dont regret
+    <h2 class="entry-hint-parent">Introduccion a Docker
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Que es Docker? Introduccion Imagina que estas armando un proyecto con un equipo Supongamos que este proyecto usa una version especifica de python Cada miembro del equipo tiene que configurar todo a mano (dependencias, variables de entorno) Esto trae una cantidad variada de problemas “A vos no te anda, en mi pc anda bien” Si tenemos varios proyectos tenemos que invertir mucho tiempo en configurarlos Para poder evitar esto Usamos Containers Una definicion basica y por arriba de que es un container es “un container es una carpeta o un paquete con todo lo que tu aplicacion necesita para funcionar”
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-12-10 14:53:04 -0300 -03'>December 10, 2024</span></footer>
+  <a class="entry-link" aria-label="post link to Introduccion a Docker" href="//localhost:1313/posts/whatisdocker/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">BadSong
     </h2>
   </header>
   <div class="entry-content">
@@ -165,25 +192,35 @@ Punto destacado 1 Punto destacado 2 Tip: [Agrega un consejo práctico o una fras
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2024-11-22 14:53:04 -0300 -03'>November 22, 2024</span></footer>
-  <a class="entry-link" aria-label="post link to I dont regret" href="//localhost:1313/posts/my-first-post/"></a>
+  <a class="entry-link" aria-label="post link to BadSong" href="//localhost:1313/posts/badsong/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">No me la container - Introduccion a Docker
+    <h2 class="entry-hint-parent">Certifications
     </h2>
   </header>
   <div class="entry-content">
-    <p>Que es Docker? Introduccion Imagina que estas armando un proyecto con un equipo Supongamos que este proyecto usa una version especifica de python Cada miembro del equipo tiene que configurar todo a mano (dependencias, variables de entorno) Esto trae una cantidad variada de problemas “A vos no te anda, en mi pc anda bien” Si tenemos varios proyectos tenemos que invertir mucho tiempo en configurarlos Para poder evitar esto Usamos Containers Una definicion basica y por arriba de que es un container es “un container es una carpeta o un paquete con todo lo que tu aplicacion necesita para funcionar”
-...</p>
+    <p>Here you can check my certifications AWS Certified Solutions Architect – Associate
+Machine Learning A to Z
+Golang Course Python Course
+Introduction To C&#43;&#43;
+Backend Engineering using JavaScript (node,express,mongodb)
+Networking &amp; Security 101
+English Test
+Pytorch Course
+AWS Networking Specialty
+Github Advanced Security
+Github Actions
+</p>
   </div>
   <footer class="entry-footer"></footer>
-  <a class="entry-link" aria-label="post link to No me la container - Introduccion a Docker" href="//localhost:1313/posts/whatisdocker/"></a>
+  <a class="entry-link" aria-label="post link to Certifications" href="//localhost:1313/posts/certs/"></a>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="//localhost:1313/">Namelesss blog</a></span> · 
+        <span>&copy; 2025 <a href="//localhost:1313/">Namelesss blog</a></span> · 
 
     <span>
         Powered by

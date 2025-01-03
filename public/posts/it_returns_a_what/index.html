@@ -5,11 +5,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Tags | Namelesss blog</title>
+<title>First one of this things | Namelesss blog</title>
 <meta name="keywords" content="">
-<meta name="description" content="">
+<meta name="description" content="In my journey of learning Go, I stumbled upon a deep dive into functions and found or re explored some topics
+func createLogger(prefix string) func(string) {
+    return func(message string) {
+        fmt.Printf(&#34;[%s] %s\n&#34;, prefix, message)
+    }
+}
+">
 <meta name="author" content="">
-<link rel="canonical" href="//localhost:1313/tags/">
+<link rel="canonical" href="//localhost:1313/posts/it_returns_a_what/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
 <link rel="icon" href="//localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
@@ -18,8 +24,7 @@
 <link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="//localhost:1313/tags/index.xml">
-<link rel="alternate" hreflang="en" href="//localhost:1313/tags/">
+<link rel="alternate" hreflang="en" href="//localhost:1313/posts/it_returns_a_what/">
 <noscript>
     <style>
         #theme-toggle,
@@ -59,7 +64,7 @@
 </noscript>
 </head>
 
-<body class="list" id="top">
+<body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -113,16 +118,38 @@
     </nav>
 </header>
 <main class="main">
-<header class="page-header">
-    <h1>Tags</h1>
-</header>
 
-<ul class="terms-tags">
-</ul>
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      First one of this things
+    </h1>
+    <div class="post-meta"><span title='2024-12-13 00:00:00 +0000 UTC'>December 13, 2024</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>In my journey of learning Go, I stumbled upon a deep dive into functions and found or re explored some topics</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">createLogger</span>(<span style="color:#a6e22e">prefix</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">func</span>(<span style="color:#66d9ef">string</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">message</span> <span style="color:#66d9ef">string</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;[%s] %s\n&#34;</span>, <span style="color:#a6e22e">prefix</span>, <span style="color:#a6e22e">message</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
     </main>
     
 <footer class="footer">
         <span>&copy; 2025 <a href="//localhost:1313/">Namelesss blog</a></span> · 
+        <p>Certifications:</p>
+<!-- raw HTML omitted --> · 
 
     <span>
         Powered by
