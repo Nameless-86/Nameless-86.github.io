@@ -65,10 +65,16 @@ type User struct {
 
 var userCache = make(map[int]User)
 
-var cacheMutex sync.RWMutex // from the sync package we take RWMutex, this is very usefull for sync and share resources
-//In the majority of apps you have more reads than writes, the RWMutex is useful for perfomance and readers don't block each other
-//Also writers block the readers until the Unlock() method is called
+var cacheMutex sync.RWMutex
 ```
+
+From the sync package we take RWMutex, this is very usefull for sync and share resources.
+A Mutex is a mutual exclusion lock. The zero value for a Mutex is an unlocked mutex.
+
+In the majority of apps you have more reads than writes, the RWMutex is useful for perfomance and readers don't block each other
+Also writers block the readers until the Unlock() method is called
+
+A Mutex is a mutual exclusion lock. The zero value for a Mutex is an unlocked mutex.
 
 When you send an HTTP request with a JSON body (the name of the user) it gets decoded into the user variable, if there is an error (invalid json or doesnt match the user struct, you will get a BadRequest error)
 
@@ -102,7 +108,8 @@ func createUser(
 	userCache[len(userCache)+1] = user
 	cacheMutex.Unlock()
 
-	w.WriteHeader(http.StatusNoContent) //sucessfully processed but no content to return
+	w.WriteHeader(http.StatusNoContent)
+	//sucessfully processed but no content to return
 }
 ```
 

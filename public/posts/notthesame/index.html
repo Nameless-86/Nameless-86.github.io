@@ -177,10 +177,13 @@ something for the user, like a struct that holds its name, for storing more than
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">userCache</span> = make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#a6e22e">User</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cacheMutex</span> <span style="color:#a6e22e">sync</span>.<span style="color:#a6e22e">RWMutex</span> <span style="color:#75715e">// from the sync package we take RWMutex, this is very usefull for sync and share resources
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//In the majority of apps you have more reads than writes, the RWMutex is useful for perfomance and readers don&#39;t block each other
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//Also writers block the readers until the Unlock() method is called
-</span></span></span></code></pre></div><p>When you send an HTTP request with a JSON body (the name of the user) it gets decoded into the user variable, if there is an error (invalid json or doesnt match the user struct, you will get a BadRequest error)</p>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cacheMutex</span> <span style="color:#a6e22e">sync</span>.<span style="color:#a6e22e">RWMutex</span>
+</span></span></code></pre></div><p>From the sync package we take RWMutex, this is very usefull for sync and share resources.
+A Mutex is a mutual exclusion lock. The zero value for a Mutex is an unlocked mutex.</p>
+<p>In the majority of apps you have more reads than writes, the RWMutex is useful for perfomance and readers don&rsquo;t block each other
+Also writers block the readers until the Unlock() method is called</p>
+<p>A Mutex is a mutual exclusion lock. The zero value for a Mutex is an unlocked mutex.</p>
+<p>When you send an HTTP request with a JSON body (the name of the user) it gets decoded into the user variable, if there is an error (invalid json or doesnt match the user struct, you will get a BadRequest error)</p>
 <p>If you provide an empty user you will also get an error, finally we add the user to the cache (hashmap) ensuring safety by locking and unlocking the resource</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">createUser</span>(
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>,
@@ -209,7 +212,8 @@ something for the user, like a struct that holds its name, for storing more than
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">userCache</span>[len(<span style="color:#a6e22e">userCache</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] = <span style="color:#a6e22e">user</span>
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cacheMutex</span>.<span style="color:#a6e22e">Unlock</span>()
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">WriteHeader</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusNoContent</span>) <span style="color:#75715e">//sucessfully processed but no content to return
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">w</span>.<span style="color:#a6e22e">WriteHeader</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusNoContent</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//sucessfully processed but no content to return
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getUser</span>(
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>,

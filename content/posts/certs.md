@@ -22,11 +22,5 @@ title = 'Certifications'
 
 [English Test](https://cert.efset.org/SY9PAG)
 
-[Pytorch Course](https://www.genome.gov/)
-
-[AWS Networking Specialty](https://www.genome.gov/)
-
-[Github Advanced Security](https://www.genome.gov/)
-
-[Github Actions](https://www.genome.gov/)
+[My most Cherished](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
