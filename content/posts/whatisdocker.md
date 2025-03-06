@@ -1,158 +1,150 @@
 +++
-title = 'Introduccion a Docker'
+title = 'Introduction to Docker'
 date = '2024-12-10T14:53:04-03:00'
 +++
 
-# Que es Docker?
+# What is Docker?
 
-### Introduccion
+### Introduction
 
-- Imagina que estas armando un proyecto con un equipo
-- Supongamos que este proyecto usa una version especifica de python
-- Cada miembro del equipo tiene que configurar todo a mano (dependencias, variables de entorno)
-- Esto trae una cantidad variada de problemas
-  - "A vos no te anda, en mi pc anda bien"
-  - Si tenemos varios proyectos tenemos que invertir mucho tiempo en configurarlos
+- Imagine you're working on a project with a team.
+- Let's assume that this project uses a specific version of Python.
+- Each team member has to set everything up manually (dependencies, environment variables).
+- This brings a variety of problems:
+  - "It doesn't work for you, but it works fine on my computer."
+  - If we have multiple projects, we need to spend a lot of time configuring them.
 
-### Para poder evitar esto
+### To avoid this We use Containers
 
-### Usamos Containers
+A basic and high-level definition of a container is: "A container is a folder or package with everything your application needs to run."
 
-Una definicion basica y por arriba de que es un container es "un container es una carpeta o un paquete con todo lo que tu aplicacion necesita para funcionar"
+Thanks to a container, we don't have to worry about configuring the project, as everything it needs is inside the container.
 
-Gracias a un container no nos tenemos que preocupar por la configuracion del proyecto, ya que todo lo que necesita esta dentro del container
-
-Lo unico que necesitariamos es algo para manipular y administrar estos containers, que es donde aparece
+The only thing we would need is something to manipulate and manage these containers, and that's where Docker comes in.
 
 ## Docker
 
-Docker es/tiene/puede:
+Docker is/has/can:
 
-- Tiene una gran comunidad por lo que se cuenta con herramientas y librerias disponibles (dockerhub)
-  - Una herramienta para administrar containers
-  - Una de las herramientas fundamentales en el area de DevOps
-  - Facilita los procesos de CI/CD al proveer entornos para cada stage/etapa?
-  - los containers usan menos recursos que una maquina virtual (despues se amplia)
-  - Las aplicaciones corren igual sin importar en que maquina esten (OS agnostic)
-  - Usa menos espacio ya que usa un file system basado en layers (se amplia despues)
-  - ...
+- It has a large community, so there are tools and libraries available (dockerhub).
+- A tool for managing containers.
+- One of the key tools in the DevOps area.
+- It simplifies CI/CD processes by providing environments for each stage.
+- Containers use fewer resources than virtual machines (explained later).
+- Applications run the same way, regardless of the machine they are on (OS agnostic).
+- Uses less space because it uses a layer-based file system (explained later).
 
-# Como se instala Docker?
-En la pagina oficial de docker esta como instalar docker engine en distintas distribuciones de linux
+# How to install Docker?
+
+On Docker's official website, you can find how to install Docker engine on different Linux distributions:
 
 https://docs.docker.com/engine/install/[DISTRO]/
 
-En el caso de windows se puede instalar directamente docker desktop (docker engine con una UI)
+For Windows, you can install Docker Desktop directly (Docker engine with a UI).
 
-una vez que terminamos de instalar, para verificar que ande todo bien corre este comando $ docker run hello-world
+Once the installation is complete, to verify everything is working correctly, run this command: `$ docker run hello-world.`
 
-# Ya muestra el maldito container
+# Show the container already
 
-Antes de llegar al container vamos con el dockerfile hace la imagen de la imagen sale el container
+Before getting to the container, let's talk about the Dockerfile, which creates the image, and from the image, the container is created.
 
-Dockerfile ------> Imagen --------> Container
+Dockerfile ------> Image --------> Container
 
-El dockerfile es un archivo de texto (yaml) que tiene las instrucciones de como se va a hacer la imagen, es como armar un molde
+The Dockerfile is a text file (yaml) that has the instructions on how the image will be built; it's like creating a mold.
 
-que le hago al dockerfile para que haga la imagen?
-corre este comando $ docker build -t nombre-de-la-imagen ./directorio-del-dockerfile
+What do I do to the Dockerfile to create the image? Run this command: `$ docker build -t image-name ./dockerfile-directory .`
 
-la imagen seria el molde, de la imagen sale un container (puede salir mas de uno)
+The image would be the mold, and from the image, a container is created (it can create more than one).
+
 ```bash
-$ docker run nombre-imagen
+$ docker run image-name
 ```
 
-# Anatomia de un Dockerfile
-basicamente un dockerfile describe los pasos necesarios para crear una imagen, por lo general va en el directorio root de la app.
+# Anatomy of a Dockerfile
 
-cada linea del dockerfile crea una nueva layer de una imagen que docker la va a guardar, basicamente cuando hagas imagenes nuevas docker solo necesita crear layers de imagenes que varien de la anterior
+Basically, a Dockerfile describes the necessary steps to create an image, and it is usually placed in the root directory of the app.
 
+Each line in the Dockerfile creates a new layer of an image that Docker will store. Essentially, when creating new images, Docker only needs to create layers of images that differ from the previous one.
 
-FROM node:0.10 ---> imagen base
+```bash
+FROM node:0.10 ---> base image
 
-MAINTAINER Anna Doe <anna@example.com> --> metadata
+MAINTAINER Anna Doe anna@example.com --> metadata
 
 LABEL "rating"="Five Stars" "class"="First Class" --> metadata
 
-USER root (por mas que los containers provean aislamiento del os siguen corriendo en el kernel del host, en los containers de produccion siempre se debe correr como un usuario no privilegiado)
+USER root (even though containers provide OS isolation, they still run on the host's kernel; in production containers, always run as a non-privileged user).
 
--- Setear variables de entorno para simplificar el proceso de crear la imagen, manteniendo el dockefile mas simple y siguiendo el principio DRY(dont repeat yourself)
+-- Set environment variables to simplify the image creation process, keeping the Dockerfile simpler and following the DRY (Don't Repeat Yourself) principle.
 
-ENV AP /data/app
-ENV SCPATH /etc/supervisor/conf.d
+ENV APP /data/app ENV SCPATH /etc/supervisor/conf.d
 
+RUN apt-get -y update --> this will make the build slower; if you can find an updated image, use that instead.
 
-
-RUN apt-get -y update --> esto va a hacer que el build sea mas lento, si podes conseguir una imagen que este actualizada
-
-#### The daemons (esto instala algunas dependencias que necesito usar, tambien forma la estructura archivos que necesito)
+#### The daemons (this installs some dependencies I need to use and also forms the file structure I need)
 
 RUN apt-get -y install supervisor
 RUN mkdir -p /var/log/supervisor
 
 #### Supervisor Configuration
--- Add sirve para copiar archivos del filesystem local a tu imagen (una vez que haga la imagen puedo usarla sin tener accesso al file system original, ya que los archivos fueron copiados)
-ADD ./supervisord/conf.d/\* $SCPATH/
+
+-- ADD is used to copy files from the local filesystem to your image (once the image is created, I can use it without having access to the original filesystem, as the files were copied). ADD ./supervisord/conf.d/* $SCPATH/
 
 #### Application Code
 
-El orden de los comandos va a afectar el tiempo de ejecucion, lo optimo es poner los que cambian entre cada imagen al fondo
+The order of commands affects execution time. It's optimal to place commands that change between images at the bottom.
 
-ADD _.js_ $AP/
-WORKDIR $AP
-RUN npm install
+ADD .js $AP/ WORKDIR $AP RUN npm install
 
-CMD corre el comando que inicia el proceso que quiero correr dentro del container
+CMD runs the command that starts the process I want to run inside the container.
 
 CMD ["supervisord", "-n"]
+```
 
-Lo que se considera como best practice es correr un solo proceso en un container
+### The best practice is to run only one process per container.
 
 ## CONTAINERS VS VIRTUAL MACHINES
 
-Si muy lindo el container, pero puedo hacer una maquina virtual y es lo mismo
+Yes, containers are nice, but can't I just make a virtual machine, and it's the same?
 
-Por que los containers y las maquinas virtuales no son lo mismo?
-Porque si fueran lo mismo se llamarian igual, chau.
+Why aren't containers and virtual machines the same? Because if they were the same, they would be called the same thing. Goodbye.
 
-Bueno, un viaje por distintas epocas de desarrollo de software
+A little journey through different eras of software development.
 ![K8s Virtualization](https://kubernetes.io/images/docs/Container_Evolution.svg)
 
-En la etapa tradicional se usaban servidores fisicos, no podemos definir recursos para distintas partes del servidor, en el caso de correr 2 aplicaciones en el mismo servidor, si una toma muchos recursos hacia caer la otra, la solucion es usar varios servidores, pero el problema de esto es el alto precio de escalar servidores fisicos y que hago con los recursos no utilizados. 
+In the traditional stage, physical servers were used, and we couldn't allocate resources for different parts of the server. In the case of running two applications on the same server, if one takes too many resources, it would crash the other. The solution was to use multiple servers, but the problem with this is the high cost of scaling physical servers and what to do with unused resources.
 
-Deploys virtualizados: Otra solucion fue correr maquinas virtuales en un servidor, la virtualizacion permite aislar y asegurar los procesos ya que cada una corre su propio sistema operativo, por lo que el resto no pueden acceder.
-Virtualizando optimizamos el uso de recursos en el servidor fisico, esto escala mejor ya que puedo usar un grupo de servidores fisicos con maquinas virtuales desechables
+Virtualized Deployments: Another solution was to run virtual machines on a server. Virtualization allows us to isolate and secure processes since each virtual machine runs its own operating system, preventing others from accessing it. Virtualization optimizes the use of resources on the physical server, and it scales better since we can use a group of physical servers with disposable virtual machines.
 
-Containers: a diferencia de las maquinas virtuales comparten sistema operativo entre las aplicaciones, tienen su propio filesystem, cpu y memoria. Lo que los hace muy utiles es el ser portables a lo largo de sistemas operativos y distintos cloud providers
+Containers: Unlike virtual machines, containers share the operating system between the applications, but they have their own filesystem, CPU, and memory. What makes them very useful is that they are portable across different operating systems and cloud providers.
 
-## Como se aislan los procesos en containers?
+## How are processes isolated in containers?
 
-Kernel Namespaces, esto es una feature de linux
+Kernel Namespaces, a feature of Linux.
 Docker usa:
- - PID (process ID): cada container tiene su propio set de process ids, dentro del container los procesos tienen distinto PID que en el host, esto previene al container de interactuar con procesos fuera de el
- - Network: Aisla las interfaces de red, ips, routing tables. Cada container tiene su propio network stack, por lo que tiene su propia ip y configuracion de red, distinta del host.
 
- - Mount: Esto es una forma de montar y desmontar filesystems sin afectar al host
+- PID (process ID): Each container has its own set of process IDs, and inside the container, processes have a different PID from the host, preventing the container from interacting with processes outside of it.
 
- - UTS: para aislar el hostname y domain name, util para las configuraciones de red
+- Network: Isolates network interfaces, IPs, and routing tables. Each container has its own network stack, so it has its own IP and network configuration, separate from the host.
 
- - User: Esto permite el mapeo de usuarios y group IDS dentro del container, esto provee seguridad al no darles acceso directo a los privilegios de root del host (mucho muy importante)
+- Mount: This is a way to mount and unmount filesystems without affecting the host.
 
-En docker: se crean namespaces separados para el container, lo que crea su propio entorno aislado
+- UTS: For isolating the hostname and domain name, useful for network configurations.
 
-## Que se encarga de los recursos que usa cada container?
+- User: This allows mapping of user and group IDs inside the container, providing security by not giving direct access to the host's root privileges (very important).
 
-Control groupc (cgroups), tambien son una feature del kernel de linux, lo que aisla los recursos dentro de cada container (cpu, memoria y operaciones sobre el disco)
+In Docker: Separate namespaces are created for the container, which creates its own isolated environment.
 
-En el caso de docker, pone los procesos del container en cgroups, que controlan y limitan los procesos del container, esto asegura la buena performance.
+## Who handles the resources used by each container?
 
+Control groups (cgroups), another feature of the Linux kernel, isolate resources within each container (CPU, memory, and disk operations).
 
+In the case of Docker, it places the container's processes in cgroups, which control and limit the container's processes, ensuring good performance.
 
-# En caso de que quieras ver con mas profundidad estos ultimos temas
+# If you want to dive deeper into these last topics
+
 https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504
 
-
-https://medium.com/@saschagrunert demystifying-containers-part-ii-container-runtimes-e363aa378f25
-
+https://medium.com/@saschagrunert/demystifying-containers-part-ii-container-runtimes-e363aa378f25
 
 https://medium.com/@saschagrunert/demystifying-containers-part-iii-container-images-244865de6fef
