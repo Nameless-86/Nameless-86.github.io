@@ -6,8 +6,18 @@
     <description>Recent content on Namelesss blog</description>
     <generator>Hugo -- 0.139.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Datawarehouse</title>
+      <link>//localhost:1313/posts/datawarehouse/</link>
+      <pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/datawarehouse/</guid>
+      <description>&lt;h1 id=&#34;a-datawarehouse-is-a-kind-of-database&#34;&gt;A datawarehouse is a kind of database?&lt;/h1&gt;
+&lt;h2 id=&#34;no-thank-you-for-reading&#34;&gt;No, thank you for reading.&lt;/h2&gt;
+&lt;h1 id=&#34;jokes-aside-what-is-a-datawarehouse&#34;&gt;Jokes aside, What is a datawarehouse?&lt;/h1&gt;
+&lt;p&gt;Oracle: &lt;em&gt;A data warehouse is a type of data management system that is designed to enable and support business intelligence (BI) activities, especially analytics. Data warehouses are solely intended to perform queries and analysis and often contain large amounts of historical data. The data within a data warehouse is usually derived from a wide range of sources such as application log files and transaction applications.&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Little Web Server</title>
       <link>//localhost:1313/posts/notthesame/</link>
@@ -27,46 +37,42 @@ It matches the URL of each incoming request against a list of registered pattern
 In simpler terms it handles the logic for every endpoint, following this pattern [[METHOD ][HOST]/[PATH]]&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Introduccion a Docker</title>
+      <title>Introduction to Docker</title>
       <link>//localhost:1313/posts/whatisdocker/</link>
       <pubDate>Tue, 10 Dec 2024 14:53:04 -0300</pubDate>
       <guid>//localhost:1313/posts/whatisdocker/</guid>
-      <description>&lt;h1 id=&#34;que-es-docker&#34;&gt;Que es Docker?&lt;/h1&gt;
-&lt;h3 id=&#34;introduccion&#34;&gt;Introduccion&lt;/h3&gt;
+      <description>&lt;h1 id=&#34;what-is-docker&#34;&gt;What is Docker?&lt;/h1&gt;
+&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Imagina que estas armando un proyecto con un equipo&lt;/li&gt;
-&lt;li&gt;Supongamos que este proyecto usa una version especifica de python&lt;/li&gt;
-&lt;li&gt;Cada miembro del equipo tiene que configurar todo a mano (dependencias, variables de entorno)&lt;/li&gt;
-&lt;li&gt;Esto trae una cantidad variada de problemas
+&lt;li&gt;Imagine you&amp;rsquo;re working on a project with a team.&lt;/li&gt;
+&lt;li&gt;Let&amp;rsquo;s assume that this project uses a specific version of Python.&lt;/li&gt;
+&lt;li&gt;Each team member has to set everything up manually (dependencies, environment variables).&lt;/li&gt;
+&lt;li&gt;This brings a variety of problems:
 &lt;ul&gt;
-&lt;li&gt;&amp;ldquo;A vos no te anda, en mi pc anda bien&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;Si tenemos varios proyectos tenemos que invertir mucho tiempo en configurarlos&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;It doesn&amp;rsquo;t work for you, but it works fine on my computer.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;If we have multiple projects, we need to spend a lot of time configuring them.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;para-poder-evitar-esto&#34;&gt;Para poder evitar esto&lt;/h3&gt;
-&lt;h3 id=&#34;usamos-containers&#34;&gt;Usamos Containers&lt;/h3&gt;
-&lt;p&gt;Una definicion basica y por arriba de que es un container es &amp;ldquo;un container es una carpeta o un paquete con todo lo que tu aplicacion necesita para funcionar&amp;rdquo;&lt;/p&gt;</description>
+&lt;h3 id=&#34;to-avoid-this-we-use-containers&#34;&gt;To avoid this We use Containers&lt;/h3&gt;
+&lt;p&gt;A basic and high-level definition of a container is: &amp;ldquo;A container is a folder or package with everything your application needs to run.&amp;rdquo;&lt;/p&gt;</description>
     </item>
     <item>
       <title>BadSong</title>
       <link>//localhost:1313/posts/badsong/</link>
       <pubDate>Fri, 22 Nov 2024 14:53:04 -0300</pubDate>
       <guid>//localhost:1313/posts/badsong/</guid>
-      <description>&lt;p&gt;No me arrepiento del deploy
-Aunque me cueste el cluster hoy
-Codear es un milagro y deployé
-Como nunca jamás lo imaginé
-¿Quién va a sacarme de tu cloud,
-De tus logs y de tu state?
-Yo siento que la infraestructura se va
-Y que el uptime de hoy no volverá
-Después de cerrar el merge request
-El pipeline espera abierto
-La locura automatizada del DevOps
-Y entre un &amp;ldquo;deploy&amp;rdquo; y &amp;ldquo;rollback&amp;rdquo;
-Vamos remontando al cielo
-Y no puedo arrepentirme del deploy&lt;/p&gt;</description>
+      <description>&lt;p&gt;No me arrepiento del deploy&lt;/p&gt;
+&lt;p&gt;Aunque me cueste el cluster hoy&lt;/p&gt;
+&lt;p&gt;Codear es un milagro y deployé&lt;/p&gt;
+&lt;p&gt;Como nunca jamás lo imaginé&lt;/p&gt;
+&lt;p&gt;¿Quién va a sacarme de tu cloud, De tus logs y de tu state?&lt;/p&gt;
+&lt;p&gt;Yo siento que la infraestructura se va&lt;/p&gt;
+&lt;p&gt;Y que el uptime de hoy no volverá&lt;/p&gt;
+&lt;p&gt;Después de cerrar el merge request&lt;/p&gt;
+&lt;p&gt;El pipeline espera abierto&lt;/p&gt;
+&lt;p&gt;La locura automatizada del DevOps&lt;/p&gt;
+&lt;p&gt;Y entre un &amp;ldquo;deploy&amp;rdquo; y &amp;ldquo;rollback&amp;rdquo;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Certifications</title>

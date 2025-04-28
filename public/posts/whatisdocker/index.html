@@ -5,24 +5,23 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Introduccion a Docker | Namelesss blog</title>
+<title>Introduction to Docker | Namelesss blog</title>
 <meta name="keywords" content="">
-<meta name="description" content="Que es Docker?
-Introduccion
+<meta name="description" content="What is Docker?
+Introduction
 
-Imagina que estas armando un proyecto con un equipo
-Supongamos que este proyecto usa una version especifica de python
-Cada miembro del equipo tiene que configurar todo a mano (dependencias, variables de entorno)
-Esto trae una cantidad variada de problemas
+Imagine you&rsquo;re working on a project with a team.
+Let&rsquo;s assume that this project uses a specific version of Python.
+Each team member has to set everything up manually (dependencies, environment variables).
+This brings a variety of problems:
 
-&ldquo;A vos no te anda, en mi pc anda bien&rdquo;
-Si tenemos varios proyectos tenemos que invertir mucho tiempo en configurarlos
+&ldquo;It doesn&rsquo;t work for you, but it works fine on my computer.&rdquo;
+If we have multiple projects, we need to spend a lot of time configuring them.
 
 
 
-Para poder evitar esto
-Usamos Containers
-Una definicion basica y por arriba de que es un container es &ldquo;un container es una carpeta o un paquete con todo lo que tu aplicacion necesita para funcionar&rdquo;">
+To avoid this We use Containers
+A basic and high-level definition of a container is: &ldquo;A container is a folder or package with everything your application needs to run.&rdquo;">
 <meta name="author" content="">
 <link rel="canonical" href="//localhost:1313/posts/whatisdocker/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
@@ -132,120 +131,123 @@ Una definicion basica y por arriba de que es un container es &ldquo;un container
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Introduccion a Docker
+      Introduction to Docker
     </h1>
     <div class="post-meta"><span title='2024-12-10 14:53:04 -0300 -03'>December 10, 2024</span>
 
 </div>
   </header> 
-  <div class="post-content"><h1 id="que-es-docker">Que es Docker?<a hidden class="anchor" aria-hidden="true" href="#que-es-docker">#</a></h1>
-<h3 id="introduccion">Introduccion<a hidden class="anchor" aria-hidden="true" href="#introduccion">#</a></h3>
+  <div class="post-content"><h1 id="what-is-docker">What is Docker?<a hidden class="anchor" aria-hidden="true" href="#what-is-docker">#</a></h1>
+<h3 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h3>
 <ul>
-<li>Imagina que estas armando un proyecto con un equipo</li>
-<li>Supongamos que este proyecto usa una version especifica de python</li>
-<li>Cada miembro del equipo tiene que configurar todo a mano (dependencias, variables de entorno)</li>
-<li>Esto trae una cantidad variada de problemas
+<li>Imagine you&rsquo;re working on a project with a team.</li>
+<li>Let&rsquo;s assume that this project uses a specific version of Python.</li>
+<li>Each team member has to set everything up manually (dependencies, environment variables).</li>
+<li>This brings a variety of problems:
 <ul>
-<li>&ldquo;A vos no te anda, en mi pc anda bien&rdquo;</li>
-<li>Si tenemos varios proyectos tenemos que invertir mucho tiempo en configurarlos</li>
+<li>&ldquo;It doesn&rsquo;t work for you, but it works fine on my computer.&rdquo;</li>
+<li>If we have multiple projects, we need to spend a lot of time configuring them.</li>
 </ul>
 </li>
 </ul>
-<h3 id="para-poder-evitar-esto">Para poder evitar esto<a hidden class="anchor" aria-hidden="true" href="#para-poder-evitar-esto">#</a></h3>
-<h3 id="usamos-containers">Usamos Containers<a hidden class="anchor" aria-hidden="true" href="#usamos-containers">#</a></h3>
-<p>Una definicion basica y por arriba de que es un container es &ldquo;un container es una carpeta o un paquete con todo lo que tu aplicacion necesita para funcionar&rdquo;</p>
-<p>Gracias a un container no nos tenemos que preocupar por la configuracion del proyecto, ya que todo lo que necesita esta dentro del container</p>
-<p>Lo unico que necesitariamos es algo para manipular y administrar estos containers, que es donde aparece</p>
+<h3 id="to-avoid-this-we-use-containers">To avoid this We use Containers<a hidden class="anchor" aria-hidden="true" href="#to-avoid-this-we-use-containers">#</a></h3>
+<p>A basic and high-level definition of a container is: &ldquo;A container is a folder or package with everything your application needs to run.&rdquo;</p>
+<p>Thanks to a container, we don&rsquo;t have to worry about configuring the project, as everything it needs is inside the container.</p>
+<p>The only thing we would need is something to manipulate and manage these containers, and that&rsquo;s where Docker comes in.</p>
 <h2 id="docker">Docker<a hidden class="anchor" aria-hidden="true" href="#docker">#</a></h2>
-<p>Docker es/tiene/puede:</p>
+<p>Docker is/has/can:</p>
 <ul>
-<li>Tiene una gran comunidad por lo que se cuenta con herramientas y librerias disponibles (dockerhub)
-<ul>
-<li>Una herramienta para administrar containers</li>
-<li>Una de las herramientas fundamentales en el area de DevOps</li>
-<li>Facilita los procesos de CI/CD al proveer entornos para cada stage/etapa?</li>
-<li>los containers usan menos recursos que una maquina virtual (despues se amplia)</li>
-<li>Las aplicaciones corren igual sin importar en que maquina esten (OS agnostic)</li>
-<li>Usa menos espacio ya que usa un file system basado en layers (se amplia despues)</li>
-<li>&hellip;</li>
+<li>It has a large community, so there are tools and libraries available (dockerhub).</li>
+<li>A tool for managing containers.</li>
+<li>One of the key tools in the DevOps area.</li>
+<li>It simplifies CI/CD processes by providing environments for each stage.</li>
+<li>Containers use fewer resources than virtual machines (explained later).</li>
+<li>Applications run the same way, regardless of the machine they are on (OS agnostic).</li>
+<li>Uses less space because it uses a layer-based file system (explained later).</li>
 </ul>
-</li>
-</ul>
-<h1 id="como-se-instala-docker">Como se instala Docker?<a hidden class="anchor" aria-hidden="true" href="#como-se-instala-docker">#</a></h1>
-<p>En la pagina oficial de docker esta como instalar docker engine en distintas distribuciones de linux</p>
+<h1 id="how-to-install-docker">How to install Docker?<a hidden class="anchor" aria-hidden="true" href="#how-to-install-docker">#</a></h1>
+<p>On Docker&rsquo;s official website, you can find how to install Docker engine on different Linux distributions:</p>
 <p><a href="https://docs.docker.com/engine/install/%5BDISTRO%5D/">https://docs.docker.com/engine/install/[DISTRO]/</a></p>
-<p>En el caso de windows se puede instalar directamente docker desktop (docker engine con una UI)</p>
-<p>una vez que terminamos de instalar, para verificar que ande todo bien corre este comando $ docker run hello-world</p>
-<h1 id="ya-muestra-el-maldito-container">Ya muestra el maldito container<a hidden class="anchor" aria-hidden="true" href="#ya-muestra-el-maldito-container">#</a></h1>
-<p>Antes de llegar al container vamos con el dockerfile hace la imagen de la imagen sale el container</p>
-<p>Dockerfile &mdash;&mdash;&gt; Imagen &mdash;&mdash;&ndash;&gt; Container</p>
-<p>El dockerfile es un archivo de texto (yaml) que tiene las instrucciones de como se va a hacer la imagen, es como armar un molde</p>
-<p>que le hago al dockerfile para que haga la imagen?
-corre este comando $ docker build -t nombre-de-la-imagen ./directorio-del-dockerfile</p>
-<p>la imagen seria el molde, de la imagen sale un container (puede salir mas de uno)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker run nombre-imagen
-</span></span></code></pre></div><h1 id="anatomia-de-un-dockerfile">Anatomia de un Dockerfile<a hidden class="anchor" aria-hidden="true" href="#anatomia-de-un-dockerfile">#</a></h1>
-<p>basicamente un dockerfile describe los pasos necesarios para crear una imagen, por lo general va en el directorio root de la app.</p>
-<p>cada linea del dockerfile crea una nueva layer de una imagen que docker la va a guardar, basicamente cuando hagas imagenes nuevas docker solo necesita crear layers de imagenes que varien de la anterior</p>
-<p>FROM node:0.10 &mdash;&gt; imagen base</p>
-<p>MAINTAINER Anna Doe <a href="mailto:anna@example.com">anna@example.com</a> &ndash;&gt; metadata</p>
-<p>LABEL &ldquo;rating&rdquo;=&ldquo;Five Stars&rdquo; &ldquo;class&rdquo;=&ldquo;First Class&rdquo; &ndash;&gt; metadata</p>
-<p>USER root (por mas que los containers provean aislamiento del os siguen corriendo en el kernel del host, en los containers de produccion siempre se debe correr como un usuario no privilegiado)</p>
-<p>&ndash; Setear variables de entorno para simplificar el proceso de crear la imagen, manteniendo el dockefile mas simple y siguiendo el principio DRY(dont repeat yourself)</p>
-<p>ENV AP /data/app
-ENV SCPATH /etc/supervisor/conf.d</p>
-<p>RUN apt-get -y update &ndash;&gt; esto va a hacer que el build sea mas lento, si podes conseguir una imagen que este actualizada</p>
-<h4 id="the-daemons-esto-instala-algunas-dependencias-que-necesito-usar-tambien-forma-la-estructura-archivos-que-necesito">The daemons (esto instala algunas dependencias que necesito usar, tambien forma la estructura archivos que necesito)<a hidden class="anchor" aria-hidden="true" href="#the-daemons-esto-instala-algunas-dependencias-que-necesito-usar-tambien-forma-la-estructura-archivos-que-necesito">#</a></h4>
-<p>RUN apt-get -y install supervisor
-RUN mkdir -p /var/log/supervisor</p>
-<h4 id="supervisor-configuration">Supervisor Configuration<a hidden class="anchor" aria-hidden="true" href="#supervisor-configuration">#</a></h4>
-<p>&ndash; Add sirve para copiar archivos del filesystem local a tu imagen (una vez que haga la imagen puedo usarla sin tener accesso al file system original, ya que los archivos fueron copiados)
-ADD ./supervisord/conf.d/* $SCPATH/</p>
-<h4 id="application-code">Application Code<a hidden class="anchor" aria-hidden="true" href="#application-code">#</a></h4>
-<p>El orden de los comandos va a afectar el tiempo de ejecucion, lo optimo es poner los que cambian entre cada imagen al fondo</p>
-<p>ADD <em>.js</em> $AP/
-WORKDIR $AP
-RUN npm install</p>
-<p>CMD corre el comando que inicia el proceso que quiero correr dentro del container</p>
-<p>CMD [&ldquo;supervisord&rdquo;, &ldquo;-n&rdquo;]</p>
-<p>Lo que se considera como best practice es correr un solo proceso en un container</p>
+<p>For Windows, you can install Docker Desktop directly (Docker engine with a UI).</p>
+<p>Once the installation is complete, to verify everything is working correctly, run this command: <code>$ docker run hello-world.</code></p>
+<h1 id="show-the-container-already">Show the container already<a hidden class="anchor" aria-hidden="true" href="#show-the-container-already">#</a></h1>
+<p>Before getting to the container, let&rsquo;s talk about the Dockerfile, which creates the image, and from the image, the container is created.</p>
+<p>Dockerfile &mdash;&mdash;&gt; Image &mdash;&mdash;&ndash;&gt; Container</p>
+<p>The Dockerfile is a text file (yaml) that has the instructions on how the image will be built; it&rsquo;s like creating a mold.</p>
+<p>What do I do to the Dockerfile to create the image? Run this command: <code>$ docker build -t image-name ./dockerfile-directory .</code></p>
+<p>The image would be the mold, and from the image, a container is created (it can create more than one).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker run image-name
+</span></span></code></pre></div><h1 id="anatomy-of-a-dockerfile">Anatomy of a Dockerfile<a hidden class="anchor" aria-hidden="true" href="#anatomy-of-a-dockerfile">#</a></h1>
+<p>Basically, a Dockerfile describes the necessary steps to create an image, and it is usually placed in the root directory of the app.</p>
+<p>Each line in the Dockerfile creates a new layer of an image that Docker will store. Essentially, when creating new images, Docker only needs to create layers of images that differ from the previous one.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>FROM node:0.10 ---&gt; base image
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>MAINTAINER Anna Doe anna@example.com --&gt; metadata
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>LABEL <span style="color:#e6db74">&#34;rating&#34;</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Five Stars&#34;</span> <span style="color:#e6db74">&#34;class&#34;</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;First Class&#34;</span> --&gt; metadata
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>USER root <span style="color:#f92672">(</span>even though containers provide OS isolation, they still run on the host<span style="color:#e6db74">&#39;s kernel; in production containers, always run as a non-privileged user).
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">-- Set environment variables to simplify the image creation process, keeping the Dockerfile simpler and following the DRY (Don&#39;</span>t Repeat Yourself<span style="color:#f92672">)</span> principle.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ENV APP /data/app ENV SCPATH /etc/supervisor/conf.d
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>RUN apt-get -y update --&gt; this will make the build slower; <span style="color:#66d9ef">if</span> you can find an updated image, use that instead.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#### The daemons (this installs some dependencies I need to use and also forms the file structure I need)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>RUN apt-get -y install supervisor
+</span></span><span style="display:flex;"><span>RUN mkdir -p /var/log/supervisor
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#### Supervisor Configuration</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>-- ADD is used to copy files from the local filesystem to your image <span style="color:#f92672">(</span>once the image is created, I can use it without having access to the original filesystem, as the files were copied<span style="color:#f92672">)</span>. ADD ./supervisord/conf.d/* $SCPATH/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#### Application Code</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The order of commands affects execution time. It<span style="color:#960050;background-color:#1e0010">&#39;</span>s optimal to place commands that change between images at the bottom.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ADD .js $AP/ WORKDIR $AP RUN npm install
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>CMD runs the command that starts the process I want to run inside the container.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>CMD <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;supervisord&#34;</span>, <span style="color:#e6db74">&#34;-n&#34;</span><span style="color:#f92672">]</span>
+</span></span></code></pre></div><h3 id="the-best-practice-is-to-run-only-one-process-per-container">The best practice is to run only one process per container.<a hidden class="anchor" aria-hidden="true" href="#the-best-practice-is-to-run-only-one-process-per-container">#</a></h3>
 <h2 id="containers-vs-virtual-machines">CONTAINERS VS VIRTUAL MACHINES<a hidden class="anchor" aria-hidden="true" href="#containers-vs-virtual-machines">#</a></h2>
-<p>Si muy lindo el container, pero puedo hacer una maquina virtual y es lo mismo</p>
-<p>Por que los containers y las maquinas virtuales no son lo mismo?
-Porque si fueran lo mismo se llamarian igual, chau.</p>
-<p>Bueno, un viaje por distintas epocas de desarrollo de software
+<p>Yes, containers are nice, but can&rsquo;t I just make a virtual machine, and it&rsquo;s the same?</p>
+<p>Why aren&rsquo;t containers and virtual machines the same? Because if they were the same, they would be called the same thing. Goodbye.</p>
+<p>A little journey through different eras of software development.
 <img alt="K8s Virtualization" loading="lazy" src="https://kubernetes.io/images/docs/Container_Evolution.svg"></p>
-<p>En la etapa tradicional se usaban servidores fisicos, no podemos definir recursos para distintas partes del servidor, en el caso de correr 2 aplicaciones en el mismo servidor, si una toma muchos recursos hacia caer la otra, la solucion es usar varios servidores, pero el problema de esto es el alto precio de escalar servidores fisicos y que hago con los recursos no utilizados.</p>
-<p>Deploys virtualizados: Otra solucion fue correr maquinas virtuales en un servidor, la virtualizacion permite aislar y asegurar los procesos ya que cada una corre su propio sistema operativo, por lo que el resto no pueden acceder.
-Virtualizando optimizamos el uso de recursos en el servidor fisico, esto escala mejor ya que puedo usar un grupo de servidores fisicos con maquinas virtuales desechables</p>
-<p>Containers: a diferencia de las maquinas virtuales comparten sistema operativo entre las aplicaciones, tienen su propio filesystem, cpu y memoria. Lo que los hace muy utiles es el ser portables a lo largo de sistemas operativos y distintos cloud providers</p>
-<h2 id="como-se-aislan-los-procesos-en-containers">Como se aislan los procesos en containers?<a hidden class="anchor" aria-hidden="true" href="#como-se-aislan-los-procesos-en-containers">#</a></h2>
-<p>Kernel Namespaces, esto es una feature de linux
+<p>In the traditional stage, physical servers were used, and we couldn&rsquo;t allocate resources for different parts of the server. In the case of running two applications on the same server, if one takes too many resources, it would crash the other. The solution was to use multiple servers, but the problem with this is the high cost of scaling physical servers and what to do with unused resources.</p>
+<p>Virtualized Deployments: Another solution was to run virtual machines on a server. Virtualization allows us to isolate and secure processes since each virtual machine runs its own operating system, preventing others from accessing it. Virtualization optimizes the use of resources on the physical server, and it scales better since we can use a group of physical servers with disposable virtual machines.</p>
+<p>Containers: Unlike virtual machines, containers share the operating system between the applications, but they have their own filesystem, CPU, and memory. What makes them very useful is that they are portable across different operating systems and cloud providers.</p>
+<h2 id="how-are-processes-isolated-in-containers">How are processes isolated in containers?<a hidden class="anchor" aria-hidden="true" href="#how-are-processes-isolated-in-containers">#</a></h2>
+<p>Kernel Namespaces, a feature of Linux.
 Docker usa:</p>
 <ul>
 <li>
-<p>PID (process ID): cada container tiene su propio set de process ids, dentro del container los procesos tienen distinto PID que en el host, esto previene al container de interactuar con procesos fuera de el</p>
+<p>PID (process ID): Each container has its own set of process IDs, and inside the container, processes have a different PID from the host, preventing the container from interacting with processes outside of it.</p>
 </li>
 <li>
-<p>Network: Aisla las interfaces de red, ips, routing tables. Cada container tiene su propio network stack, por lo que tiene su propia ip y configuracion de red, distinta del host.</p>
+<p>Network: Isolates network interfaces, IPs, and routing tables. Each container has its own network stack, so it has its own IP and network configuration, separate from the host.</p>
 </li>
 <li>
-<p>Mount: Esto es una forma de montar y desmontar filesystems sin afectar al host</p>
+<p>Mount: This is a way to mount and unmount filesystems without affecting the host.</p>
 </li>
 <li>
-<p>UTS: para aislar el hostname y domain name, util para las configuraciones de red</p>
+<p>UTS: For isolating the hostname and domain name, useful for network configurations.</p>
 </li>
 <li>
-<p>User: Esto permite el mapeo de usuarios y group IDS dentro del container, esto provee seguridad al no darles acceso directo a los privilegios de root del host (mucho muy importante)</p>
+<p>User: This allows mapping of user and group IDs inside the container, providing security by not giving direct access to the host&rsquo;s root privileges (very important).</p>
 </li>
 </ul>
-<p>En docker: se crean namespaces separados para el container, lo que crea su propio entorno aislado</p>
-<h2 id="que-se-encarga-de-los-recursos-que-usa-cada-container">Que se encarga de los recursos que usa cada container?<a hidden class="anchor" aria-hidden="true" href="#que-se-encarga-de-los-recursos-que-usa-cada-container">#</a></h2>
-<p>Control groupc (cgroups), tambien son una feature del kernel de linux, lo que aisla los recursos dentro de cada container (cpu, memoria y operaciones sobre el disco)</p>
-<p>En el caso de docker, pone los procesos del container en cgroups, que controlan y limitan los procesos del container, esto asegura la buena performance.</p>
-<h1 id="en-caso-de-que-quieras-ver-con-mas-profundidad-estos-ultimos-temas">En caso de que quieras ver con mas profundidad estos ultimos temas<a hidden class="anchor" aria-hidden="true" href="#en-caso-de-que-quieras-ver-con-mas-profundidad-estos-ultimos-temas">#</a></h1>
+<p>In Docker: Separate namespaces are created for the container, which creates its own isolated environment.</p>
+<h2 id="who-handles-the-resources-used-by-each-container">Who handles the resources used by each container?<a hidden class="anchor" aria-hidden="true" href="#who-handles-the-resources-used-by-each-container">#</a></h2>
+<p>Control groups (cgroups), another feature of the Linux kernel, isolate resources within each container (CPU, memory, and disk operations).</p>
+<p>In the case of Docker, it places the container&rsquo;s processes in cgroups, which control and limit the container&rsquo;s processes, ensuring good performance.</p>
+<h1 id="if-you-want-to-dive-deeper-into-these-last-topics">If you want to dive deeper into these last topics<a hidden class="anchor" aria-hidden="true" href="#if-you-want-to-dive-deeper-into-these-last-topics">#</a></h1>
 <p><a href="https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504">https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504</a></p>
-<p><a href="https://medium.com/@saschagrunert">https://medium.com/@saschagrunert</a> demystifying-containers-part-ii-container-runtimes-e363aa378f25</p>
+<p><a href="https://medium.com/@saschagrunert/demystifying-containers-part-ii-container-runtimes-e363aa378f25">https://medium.com/@saschagrunert/demystifying-containers-part-ii-container-runtimes-e363aa378f25</a></p>
 <p><a href="https://medium.com/@saschagrunert/demystifying-containers-part-iii-container-images-244865de6fef">https://medium.com/@saschagrunert/demystifying-containers-part-iii-container-images-244865de6fef</a></p>
 
 

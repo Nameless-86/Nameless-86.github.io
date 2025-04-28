@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Datawarehouse | Namelesss blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="A datawarehouse is a kind of database?
+No, thank you for reading.
+Jokes aside, What is a datawarehouse?
+Oracle: A data warehouse is a type of data management system that is designed to enable and support business intelligence (BI) activities, especially analytics. Data warehouses are solely intended to perform queries and analysis and often contain large amounts of historical data. The data within a data warehouse is usually derived from a wide range of sources such as application log files and transaction applications.">
+<meta name="author" content="">
+<link rel="canonical" href="//localhost:1313/posts/datawarehouse/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="//localhost:1313/posts/datawarehouse/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="//localhost:1313/" accesskey="h" title="Namelesss blog (Alt + H)">Namelesss blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="//localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="//localhost:1313/posts/certs/" title="Certifications">
+                    <span>Certifications</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Datawarehouse
+    </h1>
+    <div class="post-meta"><span title='2025-04-01 00:00:00 +0000 UTC'>April 1, 2025</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="a-datawarehouse-is-a-kind-of-database">A datawarehouse is a kind of database?<a hidden class="anchor" aria-hidden="true" href="#a-datawarehouse-is-a-kind-of-database">#</a></h1>
+<h2 id="no-thank-you-for-reading">No, thank you for reading.<a hidden class="anchor" aria-hidden="true" href="#no-thank-you-for-reading">#</a></h2>
+<h1 id="jokes-aside-what-is-a-datawarehouse">Jokes aside, What is a datawarehouse?<a hidden class="anchor" aria-hidden="true" href="#jokes-aside-what-is-a-datawarehouse">#</a></h1>
+<p>Oracle: <em>A data warehouse is a type of data management system that is designed to enable and support business intelligence (BI) activities, especially analytics. Data warehouses are solely intended to perform queries and analysis and often contain large amounts of historical data. The data within a data warehouse is usually derived from a wide range of sources such as application log files and transaction applications.</em></p>
+<p>IBM: <em>A data warehouse is a system that aggregates data from multiple sources into a single, central and consistent data store. Data warehouses help prepare data for data analytics, business intelligence (BI), data mining, machine learning (ML) and artificial intelligence (AI) initiatives.</em></p>
+<p>AWS: <em>A data warehouse is a central repository of information that can be analyzed to make more informed decisions. Data flows into a data warehouse from transactional systems, relational databases, and other sources, typically on a regular cadence. Business analysts, data engineers, data scientists, and decision makers access the data through business intelligence (BI) tools, SQL clients, and other analytics applications.</em></p>
+<p><strong>We could say that a data warehouse is a main part of a system that handles multiple sources of data for analytical tasks</strong></p>
+<h1 id="before-jumping-into-the-structure-lets-understand-the-2-mothodologies-for-building-a-data-warehouse">Before jumping into the structure, lets understand the 2 mothodologies for building a data warehouse:<a hidden class="anchor" aria-hidden="true" href="#before-jumping-into-the-structure-lets-understand-the-2-mothodologies-for-building-a-data-warehouse">#</a></h1>
+<p>all the concepts will be explained during this blog, don&rsquo;t worry.</p>
+<h3 id="1-bill-inmon---top-down">1. <strong>Bill Inmon</strong> - Top Down<a hidden class="anchor" aria-hidden="true" href="#1-bill-inmon---top-down">#</a></h3>
+<ul>
+<li>The &ldquo;father&rdquo; of the data warehouse.</li>
+<li>His idea is building an enterprise data warehouse first.</li>
+<li>Data is integrated, consistent, and normalized.</li>
+<li>From that <em>datamarts</em> are created. (a datamart is in short a small datawarehouse for a specific area of a company, like marketing, finance, sales&hellip;)</li>
+</ul>
+<p>This ensures strong integration across all the company. But it takes time to implement and has a high complexity</p>
+<p><img alt="Inmon" loading="lazy" src="https://nimbusintelligence.com/wp-content/uploads/2024/01/inmons_model-1024x532.png"></p>
+<h3 id="2-ralph-kimball--bottom-up">2. <strong>Ralph Kimball</strong> – Bottom-Up<a hidden class="anchor" aria-hidden="true" href="#2-ralph-kimball--bottom-up">#</a></h3>
+<ul>
+<li>Focuses on creating <em>datamarts</em> first, tailored to business processes.</li>
+<li>Datamarts are later combined into a unified Data Warehouse.</li>
+<li>Uses <em>dimensional modeling</em>: star and snowflake schemas.</li>
+</ul>
+<p>This ensures fast results delivery sacrificing integration between domains.</p>
+<p>Like everything in this field the approaches are both valid, there are pros and cons for each, the coice depends on your needs.</p>
+<p><img alt="Kimball" loading="lazy" src="https://nimbusintelligence.com/wp-content/uploads/2024/01/kimballs_model-1024x511.png"></p>
+<p>If its not clear that a data ware house is not a database here is a comparison
+<strong>OLTP systems (Online Transaction Processing)</strong> handle the <em>now</em>, and <strong>OLAP systems (Online Analytical Processing)</strong> handle the <em>why and how over time</em>.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>Traditional Database (OLTP)</th>
+          <th>Data Warehouse (OLAP)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Main Use</td>
+          <td>Daily operations (CRUD)</td>
+          <td>Business Intelligence &amp; Analytics</td>
+      </tr>
+      <tr>
+          <td>Data Scope</td>
+          <td>Current, real-time data</td>
+          <td>Historical, aggregated data</td>
+      </tr>
+      <tr>
+          <td>Query Type</td>
+          <td>Short, frequent transactions</td>
+          <td>Long, complex analytical queries</td>
+      </tr>
+      <tr>
+          <td>Schema Design</td>
+          <td>Highly normalized</td>
+          <td>Star or snowflake schema (denormalized)</td>
+      </tr>
+      <tr>
+          <td>Optimized For</td>
+          <td>Speed + concurrency of writes/reads</td>
+          <td>Query performance on large datasets</td>
+      </tr>
+      <tr>
+          <td>Examples</td>
+          <td>MySQL, PostgreSQL, MongoDB</td>
+          <td>Redshift, BigQuery, Snowflake</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="fact-and-dimension-tables">Fact and Dimension Tables<a hidden class="anchor" aria-hidden="true" href="#fact-and-dimension-tables">#</a></h1>
+<h2 id="fact-tables">Fact Tables<a hidden class="anchor" aria-hidden="true" href="#fact-tables">#</a></h2>
+<p>Your <strong>measurement tables</strong>. They contain <strong>quantitative data</strong> that you want to analyze, such as:</p>
+<ul>
+<li>Revenue</li>
+<li>Sales quantity</li>
+<li>Number of website visits</li>
+<li>Profit margins</li>
+</ul>
+<h3 id="characteristics">Characteristics:<a hidden class="anchor" aria-hidden="true" href="#characteristics">#</a></h3>
+<ul>
+<li>Usually <strong>very large</strong></li>
+<li>Contain <strong>foreign keys</strong> to related dimension tables</li>
+<li>Include <strong>measurable data</strong> (metrics)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">|</span> Date_ID <span style="color:#f92672">|</span> Product_ID <span style="color:#f92672">|</span> Store_ID <span style="color:#f92672">|</span> Sales_Amount <span style="color:#f92672">|</span> Quantity <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span><span style="color:#75715e">---------|------------|----------|--------------|----------|
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> <span style="color:#ae81ff">20240101</span><span style="color:#f92672">|</span> <span style="color:#ae81ff">1001</span>       <span style="color:#f92672">|</span> <span style="color:#ae81ff">21</span>       <span style="color:#f92672">|</span> <span style="color:#ae81ff">1200</span>         <span style="color:#f92672">|</span> <span style="color:#ae81ff">3</span>        <span style="color:#f92672">|</span>
+</span></span></code></pre></div><h2 id="dimension-tables">Dimension tables<a hidden class="anchor" aria-hidden="true" href="#dimension-tables">#</a></h2>
+<p>These ones describe the <strong>context</strong> of your <strong>facts</strong>, they have <strong>descriptive attributes</strong> like:</p>
+<ul>
+<li>Product details (name, category)</li>
+<li>Customer info (name, age group, location)</li>
+<li>Time (day, week, quarter)</li>
+<li>Store (region, city)</li>
+</ul>
+<h3 id="characteristics-1">Characteristics:<a hidden class="anchor" aria-hidden="true" href="#characteristics-1">#</a></h3>
+<ul>
+<li>Generally smaller than fact tables</li>
+<li>Contain attributes used for filtering, grouping, labeling</li>
+<li>Each row gives more detail to your fact table data</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>Product_ID</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Brand</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1001</td>
+          <td>Sneakers</td>
+          <td>Footwear</td>
+          <td>Nike</td>
+      </tr>
+  </tbody>
+</table>
+<p>Time Dimension
+|
+Product &ndash; Fact Table &ndash; Customer
+|
+Store Dimension</p>
+<p>Feature | Measure | Dimension
+Type | Numeric / Quantitative | Textual / Descriptive
+Location | Fact Table | Dimension Table
+Purpose | To be aggregated (SUM, AVG) | To slice, filter, group data
+Examples | Sales, Cost, Quantity | Customer Name, Product Category</p>
+<p>🔑 Key Element: The Surrogate Date Key</p>
+<p>Rather than using a native DATE type directly, warehouses use a surrogate key (like Date_ID = 20240101) that links facts to dates.
+📅 Attributes Often Include:</p>
+<ul>
+<li>
+<p>Full Date</p>
+</li>
+<li>
+<p>Day of Week</p>
+</li>
+<li>
+<p>Month / Year / Quarter</p>
+</li>
+<li>
+<p>Is Weekday / Weekend</p>
+</li>
+<li>
+<p>Fiscal Year indicators</p>
+</li>
+</ul>
+<p>This allows very efficient grouping and slicing of data over time.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="//localhost:1313/">Namelesss blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
